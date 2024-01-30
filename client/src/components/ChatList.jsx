@@ -41,7 +41,7 @@ const ChatMembersList = ({ chat }) => {
                 {recipientUser.name[0].toUpperCase()}
               </span>
               <span className="font-semibold ">{recipientUser.name}</span>
-              {onlineUsers.some((u) => u.userId === recipientUser._id) && (
+              {onlineUsers && onlineUsers.some((u) => u.userId === recipientUser._id) && (
                 <div className="bg-green-400 w-[7px] h-[7px] rounded-xl   "></div>
               )}
             </div>
