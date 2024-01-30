@@ -5,7 +5,6 @@ const bcrypt = require('bcryptjs');
 // user signup function. 
 const signup = async (req, res) => {
     const { email, name, password } = req.body;
-    console.log(req.body)
 
     let success = false;
     try {
@@ -35,7 +34,6 @@ const signup = async (req, res) => {
         await user.save();
 
         success = true;
-        console.log(success)
         res.status(201).json({
             success,
             data: user

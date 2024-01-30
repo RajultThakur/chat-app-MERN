@@ -5,9 +5,7 @@ const getMessage = async(req, res) => {
     const {page} = req.query
     
     try {
-        console.log(chatId,"chat id")
         const messages = await Message.find({chatId}).sort({createdAt : -1}).limit(50).skip(page * 50)
-        console.log("message count from ",messages.length, "from", page*50, page*50+50)
         return res.status(200).json(messages);
     } catch (error) {
         console.log(error);

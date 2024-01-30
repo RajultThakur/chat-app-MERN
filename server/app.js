@@ -16,7 +16,6 @@ const io = new Server(server,{
 });
 
 io.on('connection', (socket) => {
-    console.log("user connected with it", socket.id);
 
     io.on('addNewUser',(userId) => {
         if(!onlineUsers.some((user) => user.id === userId)){
@@ -25,7 +24,6 @@ io.on('connection', (socket) => {
                 socketId : socket.id
             })  
         }
-        console.log(onlineUsers);
     })
 })
 
